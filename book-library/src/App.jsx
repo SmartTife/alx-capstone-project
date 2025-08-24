@@ -1,31 +1,15 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import SearchResults from "./components/SearchResults";
 
-function App() {
-  const [query, setQuery] = useState("");
-
+export default function App() {
   return (
-    <Router>
-      <Header onSearch={setQuery} />
-
-      <main className="p-6">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <p className="text-center text-gray-600">
-                  {query && `Search Query: ${query}`}
-                </p>
-                {/* Results will be rendered here */}
-              </>
-            }
-          />
-        </Routes>
-      </main>
-    </Router>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<div className="p-6 text-center text-gray-600">Start by searching for a book...</div>} />
+        <Route path="/search" element={<SearchResults />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
