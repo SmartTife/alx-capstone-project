@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link, useNavigate } from "react-router-dom";
 
 export default function BookCard({ book }) {
+  const bookId = book.key?.split('/').pop();
   const coverId = book.cover_i;
   const imageUrl = coverId
     ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
@@ -10,11 +12,14 @@ export default function BookCard({ book }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer">
-      <img
+      <Link to={`/book/${bookId}`}>
+        <img
         src={imageUrl}
         alt={book.title}
         className="w-full h-48 object-cover rounded"
       />
+      </Link>
+      
 
       <h2 className="mt-2 text-lg font-semibold text-gray-800 line-clamp-2">
         {book.title}
