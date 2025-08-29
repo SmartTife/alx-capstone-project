@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 
+
 export default function BookCard({ book }) {
   const bookId = book.key?.split('/').pop();
   const coverId = book.cover_i;
