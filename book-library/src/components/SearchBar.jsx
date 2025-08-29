@@ -6,7 +6,7 @@ export default function SearchBar({ onSearch }) {
   const handleSubmit = (e) => {
   e.preventDefault();
   if (query.trim()) {
-    console.log("Search submitted for:", query);  // ✅ Add this line
+    console.log("Search submitted for:", query);  
     onSearch(query.trim());
   }
 };

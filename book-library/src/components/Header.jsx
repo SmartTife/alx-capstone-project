@@ -23,7 +23,7 @@ export default function Header() {
           placeholder="Search books by title or author..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="border px-3 py-1 rounded"
+          className="border px-3 py-1 rounded w-64"
         />
         <button onClick={handleSearch} className="bg-green-600 text-white px-4 py-1 rounded">
           Search

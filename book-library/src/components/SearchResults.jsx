@@ -1,4 +1,3 @@
-// src/pages/SearchResults.jsx
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BookCard from "../components/BookCard";
